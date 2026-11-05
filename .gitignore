@@ -1,0 +1,8 @@
+.pi-approved
+.pi-source.json
+storage.json
+schedules.json
+node_modules/
+.DS_Store
+*.log
+.env

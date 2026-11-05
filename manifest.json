@@ -1,0 +1,16 @@
+{
+  "id": "prompt-enhancer-web",
+  "name": "提示词优化",
+  "version": "1.0.0",
+  "description": "使用当前模型优化草稿，预览后回填输入框，支持恢复原文。不会自动发送或执行任务。",
+  "apiVersion": 2,
+  "permissions": ["ui", "http", "llm", "dom:anchor"],
+  "view": false,
+  "preload": true,
+  "ui": {
+    "composer.actions": [
+      {"id": "enhance", "label": "优化提示词", "kind": "action", "action": "prompt-enhancer-web:enhance"},
+      {"id": "restore", "label": "恢复原文", "kind": "action", "action": "prompt-enhancer-web:restore"}
+    ]
+  }
+}
