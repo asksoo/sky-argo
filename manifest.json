@@ -1,12 +1,21 @@
 {
   "id": "prompt-enhancer-web",
   "name": "提示词优化",
-  "version": "1.0.0",
-  "description": "使用当前模型优化草稿，预览后回填输入框，支持恢复原文。不会自动发送或执行任务。",
+  "version": "1.1.0",
+  "description": "使用当前模型优化草稿，可参考最近对话理解指代；预览后回填输入框，支持恢复原文。不会自动发送或执行任务。",
   "apiVersion": 2,
   "permissions": ["ui", "http", "llm", "dom:anchor"],
   "view": false,
   "preload": true,
+  "settings": [
+    {
+      "key": "useContext",
+      "type": "boolean",
+      "label": "参考最近对话",
+      "default": true,
+      "hint": "优化时附带当前标签页最近 3 轮对话的文字（不含工具输出和附件），只用于理解“这个”“上面”等指代。内容只发给当前对话所用的模型。"
+    }
+  ],
   "ui": {
     "composer.actions": [
       {"id": "enhance", "label": "优化提示词", "kind": "action", "action": "prompt-enhancer-web:enhance"},
